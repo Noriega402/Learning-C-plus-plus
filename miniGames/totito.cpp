@@ -10,16 +10,23 @@ using namespace std;
 char matriz[3][3];
 int x, y, contador, tiros;
 
-void gotoxy(int x,int y);
-void iniciarMatriz();
-void esqueleto();
-void dibujarMatriz();
+
+struct Jugador{ // estructura para pedir nombre de los jugadores
+	char nombre[30];
+}player[2];
+
+void gotoxy(int x,int y); // para dar coordenadas
+void registrarJugadores(); // pedir los nombres de los jugadores
+void iniciarMatriz(); // matriz sin valores
+void esqueleto(); // rayas del totito
+void dibujarMatriz(); // imprimir matriz
 
 main(){
 	system("cls");
 	system("color 0F");
 	tiros = 1;
-	
+
+	registrarJugadores();
 	iniciarMatriz();
 	esqueleto();
 	dibujarMatriz();
@@ -27,9 +34,9 @@ main(){
 	while(tiros <= 9){
 		
 		if(tiros % 2 == 0){
-			gotoxy(1,18); cout<<"Jugador 1"<<endl;
+			gotoxy(1,18); cout<<"Turno de "<<player[0].nombre<<endl;
 		}else{
-			gotoxy(1,18); cout<<"Jugador 2"<<endl;
+			gotoxy(1,18); cout<<"Turno de "<<player[1].nombre<<endl;
 		}
 		gotoxy(1,19); cout<<"Columna: ";
 		cin>>x;
@@ -63,6 +70,8 @@ main(){
 		}
 		
 	}
+
+	
 	getch();
 }
 
@@ -73,6 +82,15 @@ void gotoxy(int x,int y){
     dwPos.X = x;  
     dwPos.Y= y;  
     SetConsoleCursorPosition(hcon,dwPos);  
+}
+
+void registrarJugadores(){
+	for(int i = 0; i < 2; i++){
+		cout<<"Jugador "<<i+1<<endl;
+		cout<<"Dame tu nombre: ";
+		cin.getline(player[i].nombre,30,'\n');
+		system("cls");
+	}
 }
 
 void iniciarMatriz(){
