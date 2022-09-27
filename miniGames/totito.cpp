@@ -1,9 +1,4 @@
 // ------- JUEGO DE TOTITO -----
-// 2 jugadores
-// 1 lanzamiento a la vez
-// 9 Lanzamientos
-// 3 en raya (horizontal, vertical o diagonal)
-// matriz de 0 a 2
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
