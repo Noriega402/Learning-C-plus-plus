@@ -23,6 +23,7 @@ main(){
 	iniciarMatriz();
 	esqueleto();
 	dibujarMatriz();
+	
 	while(tiros <= 9){
 		
 		if(tiros % 2 == 0){
@@ -57,6 +58,8 @@ main(){
 			cout<<"Intente de nuevo";
 			getch();
 			system("cls");
+			esqueleto();
+			dibujarMatriz();
 		}
 		
 	}
