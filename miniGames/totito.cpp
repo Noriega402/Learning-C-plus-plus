@@ -160,7 +160,6 @@ bool ganador(){ //verificar si hay ganador
 		return false;
 	}
 }
-
 bool verificarPos(int p){
 	switch(p){
 		case 1:
@@ -253,8 +252,7 @@ void iniciarMatriz(){
 }
 void dibujarMatriz(){
 	for(int i = 0; i < 3; i++){
-		for(int j = 0; j < 3; j++){
-			
+		for(int j = 0; j < 3; j++){			
 			gotoxy(i*10+40,j*5+3); cout<<matriz[i][j];
 		}
 	}
